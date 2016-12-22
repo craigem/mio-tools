@@ -20,6 +20,7 @@ calculateArcLength height width = do
                     /(8*height)
     putStrLn $ "Parabola length is: " ++ show arcLength
 
+-- Take a string from the user and convert into a Float.
 prompt :: String -> IO Float
 prompt x = do
     putStr x
