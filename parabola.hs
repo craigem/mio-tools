@@ -1,12 +1,13 @@
 -- Calculate Parabola results
 
+main :: IO ()
 main = do
     -- Grab the height
-    number <- prompt "Please provide the height: "
-    let height = read number :: Float
+    numberH <- prompt "Please provide the height: "
+    let height = read numberH :: Float
     -- Grab the width
-    number <- prompt "Please provide the width: "
-    let width = read number :: Float
+    numberW <- prompt "Please provide the width: "
+    let width = read numberW :: Float
     -- Calculate the Length of an Arc:
     calculateArcLength height width
 
