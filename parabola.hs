@@ -3,11 +3,9 @@
 main :: IO ()
 main = do
     -- Grab the height
-    numberH <- prompt "Please provide the height: "
-    let height = read numberH :: Float
+    height <- prompt "Please provide the height: "
     -- Grab the width
-    numberW <- prompt "Please provide the width: "
-    let width = read numberW :: Float
+    width <- prompt "Please provide the width: "
     -- Calculate the Length of an Arc:
     calculateArcLength height width
 
@@ -22,7 +20,8 @@ calculateArcLength height width = do
                     /(8*height)
     putStrLn $ "Parabola length is: " ++ show arcLength
 
+prompt :: String -> IO Float
 prompt x = do
     putStr x
     number <- getLine
-    return number
+    return (read number :: Float)
