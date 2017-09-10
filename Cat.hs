@@ -19,12 +19,12 @@ main = do
     when (Unbuffered `elem` args) $ hSetBuffering stdout NoBuffering
     mapM_ (cat args) files
 
-withFile s f = putStr . unlines . f . lines =<< open s
+withFile' s f = putStr . unlines . f . lines =<< open s
   where
     open f = if f == "-" then getContents else readFile f
 
-cat [] f = withFile f id
-cat as f = withFile f (newline . number . visible as)
+cat [] f = withFile' f id
+cat as f = withFile' f (newline . number . visible as)
   where
     number  s    = if Blanks `elem` as then numberSome s else ifset Number numberAll s
     newline s    = ifset Dollar (map (++"$")) s
