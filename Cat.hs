@@ -2,8 +2,8 @@
 https://wiki.haskell.org/Tutorials/Programming_Haskell/Argument_handling
 I believe this is the license:
 https://wiki.haskell.org/HaskellWiki:Copyrights
+All later commits under GPL v3
 -}
-
 
 import System.Console.GetOpt
 import System.IO
